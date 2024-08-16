@@ -60,18 +60,18 @@ def dijkstra(graph, start, end):
             break
         
         for neighbours in graph.get_neighbours(sommet):
-            if distances[neighbours]> distances[sommet] + graph.edge[(sommet,neighbours)]:
+            if distances[neighbours] > distances[sommet] + graph.edge[(sommet,neighbours)]:
                 distances[neighbours] = distances[sommet] + graph.edge[(sommet,neighbours)]
-                predecesseur[neighbours]= sommet
+                predecesseur[neighbours] = sommet
 
-    chemin_actuelle= []
-    position= end            
+    chemin_actuelle = []
+    position = end
  
     while position in predecesseur:
         chemin_actuelle.append(position)
         position = predecesseur.get(position)
 
-    if position != start :
+    if position != start:
         return []
         
     chemin_actuelle.append(start)
